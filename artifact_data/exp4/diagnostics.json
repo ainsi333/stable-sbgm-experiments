@@ -1,0 +1,433 @@
+{
+  "all_gates_pass": true,
+  "failures": [],
+  "gates": [
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "stable",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "stable",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "stable",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "stable",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "stable",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "stable",
+      "name": "resolution",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "stable",
+      "name": "domain",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "stable",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "stable",
+      "name": "stable_late_time_boundary",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.05
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.25
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 0.5
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 1.0
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "source_hires_overlap",
+      "passed": true,
+      "time": 2.0
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 3.0
+    },
+    {
+      "model": "vp",
+      "name": "resolution",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "vp",
+      "name": "domain",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "vp",
+      "name": "interior_maximizer",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "vp",
+      "name": "vp_tail_reference",
+      "passed": true,
+      "time": 4.5
+    },
+    {
+      "model": "vp",
+      "name": "vp_lower_bound",
+      "passed": true,
+      "time": 4.5
+    }
+  ],
+  "interpretation": "Numerical consistency gates only; they are not tests of the manuscript theorem.",
+  "status": "pass",
+  "thresholds": {
+    "domain_radii": [
+      8.0,
+      16.0,
+      24.0,
+      40.0
+    ],
+    "maximizer_inner_radius": 8.0,
+    "refinement_factor": 2,
+    "resolution_rtol": 0.0001,
+    "source_table_rtol": 0.15,
+    "stable_boundary_fraction": 0.01,
+    "times": [
+      0.05,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      3.0,
+      4.5
+    ],
+    "vp_tail_reference_rtol": 0.01
+  }
+}

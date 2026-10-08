@@ -1,0 +1,51 @@
+[experiment]
+name = "experiment3"
+alpha = 1.5
+beta = 1.0
+horizon = 3.0
+epsilon = 0.25
+etas = [0.25, 0.5, 1.0, 2.0]
+seeds = [101, 202, 303, 404]
+precision = "float64"
+publication_scale = false
+
+[stationary]
+lags = [0.25, 0.5, 1.0]
+particles = 262144
+batch_size = 32768
+
+[nonstationary]
+atoms = [-3.0, 0.5, 2.0]
+weights = [0.25, 0.5, 0.25]
+checkpoints_forward = [2.5, 1.5, 0.5]
+steps = [1760, 3520]
+particles = 65536
+batch_size = 16384
+hybrid_drift_eta = 0.5
+hybrid_noise_eta = 1.0
+
+[score_table]
+z_max = 60.0
+points = 4097
+workers = 4
+validation_points = 1021
+validation_rtol = 3e-5
+validation_atol = 1e-14
+
+[analysis]
+marginal_frequency_max = 5.0
+marginal_frequency_count = 101
+joint_frequency_max = 3.0
+joint_frequency_count = 17
+joint_probe_u = 1.0
+joint_probe_v = 0.5
+mmd_bandwidth = 2.0
+mmd_feature_count = 64
+mmd_feature_seed = 0
+sample_chunk_size = 8192
+refinement_tolerance_multiplier = 0.25
+stationary_component_tolerance = 0.006
+stationary_joint_separation_min = 0.02
+stationary_min_particles = 200000
+hybrid_family_error = 0.05
+hybrid_required_seed_fraction = 0.75

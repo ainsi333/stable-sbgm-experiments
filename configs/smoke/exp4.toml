@@ -1,0 +1,46 @@
+[experiment]
+name = "experiment4"
+tier = "smoke"
+target_df = 4.0
+alpha = 1.5
+beta = 1.0
+time_min = 0.05
+time_max = 4.5
+time_points = 9
+precision = "float64"
+
+[source]
+required = false
+run_dir = ""
+config_hash = ""
+code_hash = ""
+stable_main_file = ""
+stable_main_hash = ""
+stable_hires_file = ""
+stable_hires_hash = ""
+vp_main_file = ""
+vp_main_hash = ""
+vp_hires_file = ""
+vp_hires_hash = ""
+
+[stable_spectral]
+fft_half_width = 1024.0
+fft_points = 131072
+spatial_max = 40.0
+density_floor = 1.0e-14
+
+[vp_spectral]
+fft_half_width = 256.0
+fft_points = 65536
+spatial_max = 40.0
+density_floor = 1.0e-14
+
+[validation]
+times = [0.05, 1.0, 4.5]
+domain_radii = [8.0, 20.0, 40.0]
+refinement_factor = 2
+resolution_rtol = 2.0e-3
+vp_tail_reference_rtol = 3.0e-2
+stable_boundary_fraction = 1.0e-2
+source_table_rtol = 1.5e-1
+maximizer_inner_radius = 8.0

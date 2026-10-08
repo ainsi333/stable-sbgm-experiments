@@ -1,0 +1,75 @@
+[experiment]
+name = "experiment2"
+tier = "smoke"
+beta = 1.0
+epsilon = 0.05
+seeds = [0, 1]
+particles = 2048
+batch_size = 1024
+precision = "float64"
+publication_scale = false
+final_run_guard = ""
+
+[target]
+distribution = "scipy.stats.t"
+degrees_of_freedom = 4.0
+location = 0.0
+scale = 1.0
+
+[stable]
+alpha = 1.5
+eta = 0.5
+stationary_law = "sas_unit"
+score = "fractional_tweedie_own_forward"
+
+[vp]
+stationary_law = "normal_standard"
+score = "gaussian_own_forward"
+
+[design]
+horizon_sweep = [
+  { horizon = 0.25, steps = 4 },
+  { horizon = 2.0, steps = 8 },
+]
+refinement_horizon = 2.0
+refinement_steps = [8, 16]
+checkpoint_fractions = [0.0, 0.5, 1.0]
+initialization_arms = ["exact_p_T", "stationary_reference"]
+reference_samples = ["exact_p_epsilon_a", "exact_p_epsilon_b", "exact_p_epsilon_c"]
+
+[score_table]
+time_points = 17
+space_points = 513
+stable_fft_points = 131072
+stable_tail_l = 2048.0
+stable_x_max = 192.0
+stable_blend_start = 128.0
+stable_blend_end = 192.0
+vp_fft_points = 32768
+vp_tail_l = 256.0
+vp_x_max = 32.0
+vp_blend_start = 12.0
+vp_blend_end = 16.0
+
+[score_table_hires]
+time_points = 33
+space_points = 1025
+stable_fft_points = 262144
+stable_tail_l = 2048.0
+stable_x_max = 192.0
+stable_blend_start = 128.0
+stable_blend_end = 192.0
+vp_fft_points = 65536
+vp_tail_l = 256.0
+vp_x_max = 32.0
+vp_blend_start = 12.0
+vp_blend_end = 16.0
+
+[analysis]
+wasserstein_orders = [1.0, 1.25]
+ecf_frequency_min = -5.0
+ecf_frequency_max = 5.0
+ecf_frequency_count = 81
+ecf_weight = "exp(-u^2/2)"
+subsample_fractions = [0.25, 0.5, 1.0]
+chunk_size = 4096

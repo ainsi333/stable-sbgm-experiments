@@ -1,0 +1,11 @@
+jax[cuda12]==0.7.2
+hatchling==1.27.0
+matplotlib==3.10.6
+numpy==2.3.3
+packaging==26.3
+pathspec==1.1.1
+pluggy==1.6.0
+pytest==8.4.2
+ruff==0.13.1
+scipy==1.16.2
+trove-classifiers==2026.6.1.19

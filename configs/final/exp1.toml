@@ -1,0 +1,96 @@
+[experiment]
+name = "experiment1"
+tier = "final"
+horizon = 2.0
+beta = 1.0
+epsilon = 0.5
+primary_seeds = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011]
+refinement_seeds = [200, 201, 202, 203]
+main_particles = 262144
+control_particles = 65536
+refinement_particles = 65536
+refinement_control_particles = 16384
+batch_size = 16384
+precision = "float64"
+publication_scale = true
+final_run_guard = "EXP1_FINAL_PUBLICATION_RUN"
+
+[target]
+distribution = "scipy.stats.t"
+location = 0.0
+scale = 1.0
+stable_nus = [1.2, 1.5, 3.0]
+vp_nus = [1.5]
+
+[stable]
+alpha = 1.5
+eta = 0.5
+stationary_law = "sas_unit"
+score = "fractional_exact_cf_tabulated"
+
+[vp]
+stationary_law = "normal_standard"
+score = "gaussian_exact_cf_tabulated"
+
+[controls]
+sas_alpha = 1.5
+pareto_tail_index = 1.5
+pareto_minimum = 1.0
+pareto_symmetric = true
+gaussian_mean = 0.0
+gaussian_std = 1.0
+
+[design]
+primary_seed_steps = [80]
+primary_steps = 80
+refinement_seed_steps = [40, 80, 160]
+checkpoint_fractions = [0.0, 0.25, 0.5, 0.75, 1.0]
+initialization_arms = ["stationary_tail_reference", "exact_p_T_marginal_control"]
+reference_samples = ["exact_p_s_a", "exact_p_s_b", "exact_p_s_c"]
+direct_controls = ["sas", "pareto", "gaussian"]
+
+[score_table]
+time_points = 129
+space_points = 8193
+stable_fft_points = 524288
+stable_tail_l = 8192.0
+stable_x_max = 384.0
+stable_blend_start = 256.0
+stable_blend_end = 384.0
+vp_fft_points = 262144
+vp_tail_l = 1024.0
+vp_x_max = 16.0
+vp_blend_start = 12.0
+vp_blend_end = 16.0
+sensitivity_refinement_factor = 2
+
+[analysis]
+wasserstein_orders = [1.0]
+ecf_frequency_min = -5.0
+ecf_frequency_max = 5.0
+ecf_frequency_count = 81
+ecf_weight = "exp(-u^2/2)"
+tail_fractions = [0.003, 0.004, 0.006, 0.008, 0.012, 0.018, 0.03]
+primary_tail_fraction = 0.006
+plateau_fractions = [0.004, 0.006, 0.008]
+survival_probabilities = [0.02, 0.015581556161088883, 0.012139244620058345, 0.00945741609003176, 0.0073680629972807735, 0.005740294369528563, 0.00447213595499958, 0.0034841418771425405, 0.002714417616594907, 0.0021147425268811283, 0.0016475489724420657, 0.0012835688421125163, 0.001]
+fit_primary = [0.001, 0.01]
+fit_sensitivities = [[0.002, 0.02], [0.001, 0.005]]
+bootstrap_replicates = 10000
+subsample_fractions = [0.25, 0.5, 1.0]
+blocks = 4
+mean_excess_threshold_method = "theoretical_discrete_rho"
+mean_excess_fractions = [0.012, 0.006, 0.003]
+minimum_exceedances_per_seed = 200
+minimum_pooled_exceedances = 2400
+minimum_contributing_seeds = 8
+chunk_size = 4096
+pt_ecf_familywise_alpha = 0.01
+score_sensitivity_floor_fraction = 0.5
+score_sensitivity_hill_tolerance = 0.05
+score_sensitivity_constant_relative_tolerance = 0.10
+refinement_floor_fraction = 1.0
+refinement_hill_tolerance = 0.10
+refinement_constant_relative_tolerance = 0.25
+refinement_m_slope_tolerance = 0.05
+gaussian_hill_separation_margin = 0.25

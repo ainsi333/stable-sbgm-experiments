@@ -1,0 +1,43 @@
+Bootstrap: docker
+From: python:3.12.13-slim-bookworm
+
+%files
+    containers/requirements-gpu-cu12.lock /tmp/requirements.lock
+    pyproject.toml /opt/levy-exp3/pyproject.toml
+    README.md /opt/levy-exp3/README.md
+    LICENSE /opt/levy-exp3/LICENSE
+    THIRD_PARTY.md /opt/levy-exp3/THIRD_PARTY.md
+    Makefile /opt/levy-exp3/Makefile
+    src /opt/levy-exp3/src
+    experiments /opt/levy-exp3/experiments
+    scripts /opt/levy-exp3/scripts
+    configs /opt/levy-exp3/configs
+    tests /opt/levy-exp3/tests
+    slurm /opt/levy-exp3/slurm
+    reports /opt/levy-exp3/reports
+    containers /opt/levy-exp3/containers
+
+%post
+    python -m pip install --no-cache-dir --requirement /tmp/requirements.lock
+    cd /opt/levy-exp3
+    python -m pip install --no-cache-dir --no-build-isolation --no-deps .
+    python -m pip check
+    PYTHONPATH=/opt/levy-exp3/src:/opt/levy-exp3 \
+        python -c "from pathlib import Path; import experiments.exp2, levy_experiments; root=Path('/opt/levy-exp3'); assert Path(experiments.exp2.__file__).is_relative_to(root); assert Path(levy_experiments.__file__).is_relative_to(root)"
+    PYTHONPATH=/opt/levy-exp3/src:/opt/levy-exp3 \
+        python -m pytest -q -m "not gpu"
+
+%environment
+    export PYTHONUNBUFFERED=1
+    export PYTHONDONTWRITEBYTECODE=1
+    export JAX_ENABLE_X64=true
+    export XLA_PYTHON_CLIENT_PREALLOCATE=false
+    export MPLCONFIGDIR=/tmp/matplotlib
+    export PYTHONPATH=/opt/levy-exp3/src:/opt/levy-exp3
+
+%runscript
+    exec levy-exp3 "$@"
+
+%labels
+    org.opencontainers.image.title "levy-experiments-exp3"
+    org.opencontainers.image.version "0.1.0"

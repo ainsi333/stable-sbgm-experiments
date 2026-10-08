@@ -1,0 +1,23 @@
+{
+  "figures": {
+    "experiment1": {
+      "experiment1_main.pdf": "b667adfabb2883a4def60b3b0debc7faa8817a0c778ffe74bbb3ec6b3f620423",
+      "experiment1_main.png": "767cd2f1be4494c673e69f28853c849a564fb359713177d960960c9f571f8ce1",
+      "experiment1_quantile_ratio.pdf": "2d33eceead17f40f0abc4b6444880abfc8833d635b18be26f20b966a51e0aa40",
+      "experiment1_quantile_ratio.png": "14153a6dda2b04c514e773703f54abe34508868d9ea7838ccac4a17d6222a9ac",
+      "source:tail_summary.csv": "0569fd40f6a53271459887b7e2c44fefbb379e264903e2ab125538f929acaf70"
+    },
+    "experiment2": {
+      "experiment2_initialization_comparison_cropped.pdf": "e60d162184481a74739ef8fa237463cd196818454ba86a2c4412656edccde425",
+      "experiment2_initialization_comparison_cropped.png": "53eaba1289d35142155b6c1442b14cbb9a4ae79c83e26ea1807703aeb0164af0",
+      "source:initialization_wp_summary.csv": "711caf2907c3e3914173dba752e22f79c4dbc8b05bd40b243161d21d8a873cb6",
+      "source:requested_analysis_config.toml": "e76b2a6601b0763bd59d3cd20d6d5fb9bcdf5ce50a0e9f7137439d2eccb50db7"
+    },
+    "experiment4": {
+      "experiment4_ct.pdf": "52d2a23ac942f3e68a0e6e4e30c93127813c30392932869c758a7a619636ea4c",
+      "experiment4_ct.png": "c0da655500779da933cdf03d91edc6a4189d690fe5fd0064a900352404303eb7",
+      "source:ct_curve.csv": "f055865a7e395bb1ff4c6fa3b43c70a5eea830743ac11e508f1f3b7027e80236"
+    }
+  },
+  "status": "complete"
+}

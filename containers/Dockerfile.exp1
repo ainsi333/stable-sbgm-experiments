@@ -1,0 +1,36 @@
+FROM python:3.12.13-slim-bookworm
+
+LABEL org.opencontainers.image.title="levy-experiments-exp1" \
+      org.opencontainers.image.version="0.1.0"
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    JAX_ENABLE_X64=true \
+    XLA_PYTHON_CLIENT_PREALLOCATE=false \
+    MPLCONFIGDIR=/tmp/matplotlib \
+    PYTHONPATH=/opt/levy-experiments/src:/opt/levy-experiments
+
+RUN groupadd --gid 10001 experiment \
+    && useradd --uid 10001 --gid experiment --create-home experiment
+
+WORKDIR /opt/levy-experiments
+COPY containers/requirements-gpu-cu12.lock /tmp/requirements.lock
+RUN python -m pip install --no-cache-dir --requirement /tmp/requirements.lock
+
+COPY pyproject.toml README.md LICENSE THIRD_PARTY.md Makefile ./
+COPY src ./src
+COPY experiments ./experiments
+COPY scripts ./scripts
+COPY configs ./configs
+COPY tests ./tests
+COPY slurm ./slurm
+COPY reports ./reports
+COPY containers ./containers
+RUN python -m pip install --no-cache-dir --no-build-isolation --no-deps . \
+    && python -m pip check \
+    && python -c "from pathlib import Path; import experiments.exp1, levy_experiments; root=Path('/opt/levy-experiments'); assert Path(experiments.exp1.__file__).is_relative_to(root); assert Path(levy_experiments.__file__).is_relative_to(root)" \
+    && python -m pytest -q -m "not gpu"
+
+USER experiment
+ENTRYPOINT ["python", "-m", "experiments.exp1.run"]
+CMD ["--help"]

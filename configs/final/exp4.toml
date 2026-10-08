@@ -1,0 +1,46 @@
+[experiment]
+name = "experiment4"
+tier = "final"
+target_df = 4.0
+alpha = 1.5
+beta = 1.0
+time_min = 0.05
+time_max = 4.5
+time_points = 64
+precision = "float64"
+
+[source]
+required = true
+run_dir = "../../../run_gate_final_20260823/exp2-eaaf84c93847"
+config_hash = "eaaf84c9384771ba1526332eca3021d0ace1c02f32d9f1e5a7f52b062f7ef737"
+code_hash = "e160f3e2e59784d145a316519347656cf5217615e6e7ed6cc03712408d04fe52"
+stable_main_file = "exp2_stable_score_8492111aedb88481.npz"
+stable_main_hash = "eac7338abd312dac8e502c9b0222afce476b90db89449832b661e031f144429d"
+stable_hires_file = "exp2_stable_score_a6ee08f0b368fe00.npz"
+stable_hires_hash = "bb80801ee30d28208072be4017eea61817503295d0039961fa80577c8ef1af83"
+vp_main_file = "exp2_vp_score_9631dd5617666d54.npz"
+vp_main_hash = "431b39f76f81701728063c0ca262d8e260b8d539e491f714867ae4318ed77e57"
+vp_hires_file = "exp2_vp_score_bf8cd2cb545f9f35.npz"
+vp_hires_hash = "2bac2903f79acc500e1ffa67885e4c1e0cf6cff2277ce569fdf730b2110c1ccd"
+
+[stable_spectral]
+fft_half_width = 8192.0
+fft_points = 1048576
+spatial_max = 40.0
+density_floor = 1.0e-14
+
+[vp_spectral]
+fft_half_width = 1024.0
+fft_points = 524288
+spatial_max = 40.0
+density_floor = 1.0e-14
+
+[validation]
+times = [0.05, 0.25, 0.5, 1.0, 2.0, 3.0, 4.5]
+domain_radii = [8.0, 16.0, 24.0, 40.0]
+refinement_factor = 2
+resolution_rtol = 1.0e-4
+vp_tail_reference_rtol = 1.0e-2
+stable_boundary_fraction = 1.0e-2
+source_table_rtol = 1.5e-1
+maximizer_inner_radius = 8.0

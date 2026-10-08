@@ -1,0 +1,25 @@
+{
+  "analysis": "terminal_initialization_horizon_comparison",
+  "analysis_spec_hash": "fd5e654500a54681165bec745e1c3072223f59fec91e11745badcf6751dccdca",
+  "central_estimator": "median across independent seeds",
+  "experiment": 2,
+  "horizon_selection": "task metadata purpose == horizon_sweep",
+  "post_hoc": true,
+  "postprocessor_code_hash": "42b134fa271b73740c64adf24792c6ac2ee395a8fb0f93759614f336a7143cec",
+  "score_sensitivity_gate_recomputed": false,
+  "settings": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260828,
+    "confidence_level": 0.9,
+    "mc_resolution_multiplier": 2.0,
+    "minimum_resolved_seed_fraction": 0.75,
+    "orders": [
+      1.1,
+      1.4
+    ]
+  },
+  "source_aggregate_manifest_sha256": "91360be8f5acb99858e12a1fd56345e91401d9d89d4cdb7405b2af9131614ac5",
+  "source_code_hash": "e160f3e2e59784d145a316519347656cf5217615e6e7ed6cc03712408d04fe52",
+  "source_config_hash": "eaaf84c9384771ba1526332eca3021d0ace1c02f32d9f1e5a7f52b062f7ef737",
+  "uncertainty": "joint-seed percentile bootstrap for the median"
+}

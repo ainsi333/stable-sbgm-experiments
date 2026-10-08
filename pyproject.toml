@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "levy-experiments"
+version = "0.1.0"
+description = "Auditable JAX implementation of the SP-SDE manuscript experiments"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Manuscript authors" }]
+dependencies = [
+  "jax==0.7.2",
+  "matplotlib==3.10.6",
+  "numpy==2.3.3",
+  "scipy==1.16.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "hatchling==1.27.0",
+  "pytest==8.4.2",
+  "ruff==0.13.1",
+]
+
+[project.scripts]
+levy-exp1 = "experiments.exp1.run:main"
+levy-exp1-aggregate = "experiments.exp1.aggregate:main"
+levy-exp2 = "experiments.exp2.run:main"
+levy-exp2-aggregate = "experiments.exp2.aggregate:main"
+levy-exp3 = "levy_experiments.cli_exp3:main"
+levy-exp3-aggregate = "levy_experiments.cli_aggregate_exp3:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/levy_experiments", "experiments"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = ["outputs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
